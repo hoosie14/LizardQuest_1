@@ -22,7 +22,7 @@ public class NPCScript1 : MonoBehaviour
     [HideInInspector]
     public bool QueDialogue = false; 
 
-    private PlayerMovement playerMovement;
+    public PlayerMovement playerMovement;
 
     [Header("dialogue")]
 
@@ -39,8 +39,6 @@ public class NPCScript1 : MonoBehaviour
     void Start()
     {
         collider = this.GetComponent<Collider2D>();
-
-        _dialogueBox.active = false; 
     }
 
     // Update is called once per frame
@@ -88,7 +86,7 @@ public class NPCScript1 : MonoBehaviour
     {
         if (collider.IsTouching(playerCollision))
         {
-            playerMovement = playerCollision.GetComponent<PlayerMovement>();
+            //playerMovement = playerCollision.GetComponent<PlayerMovement>();
 
             if (Input.GetButtonDown("Interact"))
             {
