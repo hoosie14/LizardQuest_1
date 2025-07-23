@@ -1,4 +1,0 @@
-repository "LizardQuest_1/LizardQuest_1@2474361118520@cloud"
-  path "/"
-    br "/main"
-    co "/main"

@@ -54,6 +54,7 @@ public class EnemyCollision : MonoBehaviour
             battleScript.OnDeath = OnDeath;
 
             battleScript.EnemySprite.sprite = sprite; 
+            collision.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
         
     }
