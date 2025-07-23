@@ -59,6 +59,7 @@ public class NPCTest_Updated : MonoBehaviour
 
             //Disable Movement and set needed variables
             playerMovement.enablePlayerControls = false;
+            player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             IsInstantiated = true;
             _Text = _dialougeBox_Instantiated.GetComponentInChildren<TMP_Text>();
             _Text.text = _DialougeList[0];
