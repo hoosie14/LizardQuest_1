@@ -13,6 +13,9 @@ public class BattleScript1 : MonoBehaviour
     public TMP_Text ScoreText;
     public GameObject GameOverScreen;
     public Image EnemySprite;
+    public GameObject Fader;
+    public PlayerMovement player; 
+
 
     [Header("Buttons")]
     public GameObject MainButtons;
@@ -53,6 +56,11 @@ public class BattleScript1 : MonoBehaviour
     [Header("Items")]
     public float _cookies = 2;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip OverworldMusic;
+    public AudioClip BattleMusic;
+
     [Header("Misc")]
     public TMP_Text HP;
     public TMP_Text ConsoleText;
@@ -92,6 +100,17 @@ public class BattleScript1 : MonoBehaviour
 
     private void OnEnable()
     {
+        Win = false;
+        sliderFill.active = true;
+
+
+        EnemyHP = MaxEnemyHP;
+
+        enemyHealthbar.value = 1f;
+
+        audioSource.clip = BattleMusic;
+        audioSource.Play();
+
         BagButtons.active = false;
         AttackButtons.active = false;
         MainButtons.active = true;
@@ -223,6 +242,12 @@ public class BattleScript1 : MonoBehaviour
 
     }
 
+    public void Close()
+    {
+        StartCoroutine(CloseWindow());
+    }
+
+
     IEnumerator Won()
     {
         BagButtons.active = false;
@@ -236,6 +261,9 @@ public class BattleScript1 : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         VictoryScreen.active = true;
+
+        audioSource.clip = OverworldMusic;
+        
     }
 
     IEnumerator Lost()
@@ -251,9 +279,22 @@ public class BattleScript1 : MonoBehaviour
         GameOverScreen.active = true; 
     }
 
-    public void CloseWindow()
+    IEnumerator CloseWindow()
     {
-        //
+        Fader.active = true;
+
+        
+
+        yield return new WaitForSeconds(1);
+        
+        player.enablePlayerControls = true;
+        audioSource.Play();
+        Fader.active = false;
+        BattleWindow.active = false;
+
+        yield return new WaitForSeconds(1);
+
+       
     }
 
 }

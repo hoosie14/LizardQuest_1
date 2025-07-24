@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
+    [Header("REMOVE")]
+    public bool timeForBoss = false;
+
     public Sprite sprite; 
 
     public BattleScript1 battleScript;
@@ -23,6 +26,11 @@ public class EnemyCollision : MonoBehaviour
     public string OnAttack;
     public string OnDeath;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip OverworldMusic;
+    public AudioClip BattleMusic; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +40,8 @@ public class EnemyCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (timeForBoss)
+            BattleQued();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,6 +71,8 @@ public class EnemyCollision : MonoBehaviour
     IEnumerator BattleQued()
     {
         Fader.active = true;
+        //audioSource.clip = BattleMusic; 
+
 
         yield return new WaitForSeconds(1);
 
@@ -70,6 +81,8 @@ public class EnemyCollision : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         Fader.active = false;
+
+        this.gameObject.active = false; 
     }
 
 

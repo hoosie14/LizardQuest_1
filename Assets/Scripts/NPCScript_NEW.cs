@@ -6,7 +6,11 @@ using TMPro;
 
 
 public class NPCTest_Updated : MonoBehaviour
-{    
+{
+    [Header("Remove")]
+    public GameObject BattleWindow;
+    public bool isEnemy; 
+
     //Dialouge Variables
     public bool _IsInteractable = true;
     public GameObject _dialougeBox;
@@ -52,7 +56,7 @@ public class NPCTest_Updated : MonoBehaviour
             //Instantiate
             _dialougeBox_Instantiated = Instantiate(
                 _dialougeBox,
-                new Vector3(250, 78, 0),
+                new Vector3(540, 200, 0),
                 Quaternion.identity,
                 _dialougeBox_Parent.transform
                 ) as GameObject;
@@ -73,7 +77,9 @@ public class NPCTest_Updated : MonoBehaviour
                 _Current_Index = 0;
                 playerMovement.enablePlayerControls = true;
                 IsInstantiated = false;
-                
+
+                if (isEnemy)
+                    BattleWindow.active = true;
             }
             else
             {

@@ -10,9 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
+    [Header("Visual")]
+    public Animator playerAnimator; 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        
     }
 
     void Update()
@@ -26,9 +31,14 @@ public class PlayerMovement : MonoBehaviour
             // Normalize so diagonal speed isn't faster
             movement = movement.normalized;
         }
-        
 
-        
+        playerAnimator.SetInteger("MoveX", (int)movement.x);
+        playerAnimator.SetInteger("MoveY", (int)movement.y);
+
+        if (movement.x == 0 && movement.y == 0)
+            playerAnimator.enabled = false;
+        else
+            playerAnimator.enabled = true; 
     }
 
     void FixedUpdate()
