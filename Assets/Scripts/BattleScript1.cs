@@ -7,6 +7,8 @@ using TMPro.Examples;
 
 public class BattleScript1 : MonoBehaviour
 {
+    //Save stuff
+    public string EnemyId;
     //This Gameobject. 
     public GameObject BattleWindow;
     public GameObject VictoryScreen;
