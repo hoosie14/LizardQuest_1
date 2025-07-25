@@ -7,11 +7,6 @@ public class MainMenuButtons : MonoBehaviour {
 
 	public string Scene;
 
-	public void GoToOptions ()
-	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-	}
-
 	public void PlayGame()
 	{
 		SceneManager.LoadScene(Scene);
