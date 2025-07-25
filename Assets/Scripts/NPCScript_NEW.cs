@@ -79,7 +79,12 @@ public class NPCTest_Updated : MonoBehaviour
                 IsInstantiated = false;
 
                 if (isEnemy)
+                {
                     BattleWindow.active = true;
+
+                    this.gameObject.active = false; 
+                }
+
             }
             else
             {
