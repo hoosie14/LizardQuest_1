@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306dd362f597ed7458e8f8951bed27fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene: Joshua'sOverworldScene
+  Scene: Joshua'sIntroScene
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

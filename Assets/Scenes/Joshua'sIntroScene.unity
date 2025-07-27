@@ -2499,7 +2499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 237120441}
   Fader: {fileID: 978132996}
-  Scene: MainMenu
+  Scene: Joshua'sOpenWorldScene
 --- !u!61 &347600719
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2721,11 +2721,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 38e98486da0b34117846437a3e852ad0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d28296dc2b7764bd298b1487bc39b7f1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2841,7 +2841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.9}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491818812
@@ -2866,15 +2866,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Try Again?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
+  m_sharedMaterial: {fileID: -8155392782720483172, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3154,6 +3154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1062de13c131a47bc992962147797d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   timeForBoss: 0
   sprite: {fileID: 21300000, guid: 77db0ed2ffa654b87961beebcedd3ca9, type: 3}
   battleScript: {fileID: 1387016429}
@@ -3166,9 +3167,9 @@ MonoBehaviour:
   OnAppearance: A Basic Lizard Attacks!
   OnAttack: The Lizard doesn't hold back!
   OnDeath: 'Not bad kid... not bad... '
-  audioSource: {fileID: 0}
-  OverworldMusic: {fileID: 0}
-  BattleMusic: {fileID: 0}
+  audioSource: {fileID: 459201695}
+  OverworldMusic: {fileID: 8300000, guid: d28296dc2b7764bd298b1487bc39b7f1, type: 3}
+  BattleMusic: {fileID: 8300000, guid: 0c43ff7fe82ff4c98967aeaf04a10014, type: 3}
 --- !u!4 &529229662
 Transform:
   m_ObjectHideFlags: 0
@@ -3178,7 +3179,7 @@ Transform:
   m_GameObject: {fileID: 529229658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9, y: 1.7, z: -0.071031995}
+  m_LocalPosition: {x: -1.55, y: 2.31, z: -0.071031995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6290,8 +6291,8 @@ Tilemap:
   - first: {x: 0, y: 6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6460,8 +6461,8 @@ Tilemap:
   - first: {x: -1, y: 9, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileIndex: 9
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6480,8 +6481,8 @@ Tilemap:
   - first: {x: 1, y: 9, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6697,7 +6698,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: e9d669be1f3694b739a461d740401e8d, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: cb9cdb87785d947798189e530d6c5c86, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: b252e38d414754e1dbb3298d7b0283b0, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 666de111a72214261b2cc10897788719, type: 2}
@@ -6713,7 +6714,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 22c16fb2373144c1fa1979565b658410, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: f63ab21e393e5419a9c908a28f21ac1e, type: 2}
-  - m_RefCount: 28
+  - m_RefCount: 25
     m_Data: {fileID: 11400000, guid: b5e1256e08f544287a1bd30692976334, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 3acfd0c7a37ee47379f5738d14d1333f, type: 2}
@@ -6733,6 +6734,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6e3a2136a6141439e93aafbf635300a4, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 317561f577e6c4ab2838222035fa8c4e, type: 2}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: c6afbbc50a4a5479db224892cb635f36, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 105
     m_Data: {fileID: -1828815046, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
@@ -6760,7 +6763,7 @@ Tilemap:
     m_Data: {fileID: -1436865228, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -2095839836, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: -756222609, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
   - m_RefCount: 20
     m_Data: {fileID: 1528077519, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
@@ -6768,7 +6771,7 @@ Tilemap:
     m_Data: {fileID: -1338854856, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: -1372102281, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
-  - m_RefCount: 28
+  - m_RefCount: 25
     m_Data: {fileID: 985234934, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -849217113, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
@@ -6788,6 +6791,8 @@ Tilemap:
     m_Data: {fileID: -461847176, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1992889196, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
+  - m_RefCount: 2
+    m_Data: {fileID: -27363437, guid: bdbaac6e1836343a692ab12e12c626df, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 282
     m_Data:
@@ -6921,7 +6926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710323497
@@ -6946,15 +6951,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
+  m_sharedMaterial: {fileID: -8155392782720483172, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7525,8 +7530,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1984923393
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7702,14 +7707,14 @@ RectTransform:
   m_GameObject: {fileID: 946027871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4331, y: 1.4331, z: 1.4331}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1683965143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74.1, y: -1}
+  m_AnchoredPosition: {x: 10, y: -4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &946027873
@@ -7734,8 +7739,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: GAME OVER!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
+  m_sharedMaterial: {fileID: -8155392782720483172, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8538,7 +8543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030014364
@@ -8563,8 +8568,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Close
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
+  m_sharedMaterial: {fileID: -8155392782720483172, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8827,6 +8832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1062de13c131a47bc992962147797d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   timeForBoss: 0
   sprite: {fileID: 21300000, guid: c6efc5758cd044d878d01e8c4e0e2e23, type: 3}
   battleScript: {fileID: 1387016429}
@@ -9355,8 +9361,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
+  m_sharedMaterial: {fileID: -8155392782720483172, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9614,7 +9620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9150943, g: 0.9018628, b: 0.6949537, a: 1}
+  m_Color: {r: 0.9056604, g: 0.8889539, b: 0.5938057, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9735,7 +9741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.02745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10007,7 +10013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1351699839
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10110,6 +10116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1062de13c131a47bc992962147797d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   timeForBoss: 0
   sprite: {fileID: 21300000, guid: c6efc5758cd044d878d01e8c4e0e2e23, type: 3}
   battleScript: {fileID: 1387016429}
@@ -10122,9 +10129,9 @@ MonoBehaviour:
   OnAppearance: A big lizard attacks!
   OnAttack: He's not messin' around!
   OnDeath: '"Curse you, Johnathan!!!"'
-  audioSource: {fileID: 0}
-  OverworldMusic: {fileID: 0}
-  BattleMusic: {fileID: 0}
+  audioSource: {fileID: 459201695}
+  OverworldMusic: {fileID: 8300000, guid: d28296dc2b7764bd298b1487bc39b7f1, type: 3}
+  BattleMusic: {fileID: 8300000, guid: 0c43ff7fe82ff4c98967aeaf04a10014, type: 3}
 --- !u!4 &1351699842
 Transform:
   m_ObjectHideFlags: 0
@@ -10200,6 +10207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5143be6fd70e7461bb16b95167df284d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyId: 
   BattleWindow: {fileID: 1387016427}
   VictoryScreen: {fileID: 1506340797}
   ScoreText: {fileID: 1732358801}
@@ -11432,7 +11440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.03529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11485,7 +11493,7 @@ Transform:
   m_GameObject: {fileID: 1526907924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -2.42, z: -0.071031995}
+  m_LocalPosition: {x: 0, y: -2.42, z: -0.071031995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11505,6 +11513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1062de13c131a47bc992962147797d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   timeForBoss: 0
   sprite: {fileID: 21300000, guid: 77db0ed2ffa654b87961beebcedd3ca9, type: 3}
   battleScript: {fileID: 1387016429}
@@ -11517,9 +11526,9 @@ MonoBehaviour:
   OnAppearance: A Basic Lizard Attacks!
   OnAttack: The Lizard doesn't hold back!
   OnDeath: 'Not bad kid... not bad... '
-  audioSource: {fileID: 0}
-  OverworldMusic: {fileID: 0}
-  BattleMusic: {fileID: 0}
+  audioSource: {fileID: 459201695}
+  OverworldMusic: {fileID: 8300000, guid: d28296dc2b7764bd298b1487bc39b7f1, type: 3}
+  BattleMusic: {fileID: 8300000, guid: 0c43ff7fe82ff4c98967aeaf04a10014, type: 3}
 --- !u!61 &1526907928
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11721,8 +11730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 162.7, y: -117.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 198.6, y: -112.60906}
+  m_SizeDelta: {x: 89.7061, y: 40.5819}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542284936
 MonoBehaviour:
@@ -11793,7 +11802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.3137255}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12646,6 +12655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1062de13c131a47bc992962147797d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   timeForBoss: 0
   sprite: {fileID: 21300000, guid: c6efc5758cd044d878d01e8c4e0e2e23, type: 3}
   battleScript: {fileID: 1387016429}
@@ -13065,8 +13075,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: _
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
+  m_sharedMaterial: {fileID: -8155392782720483172, guid: 3e96cbf4fda29473faddabf57104385a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

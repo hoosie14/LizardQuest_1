@@ -14,9 +14,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/OptionsMenu.unity
     guid: 32f7e7cacba544f4eba90efeac8f7445
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Joshua'sOverworldScene.unity
     guid: 46263a8923f5e472193a6bb5fc4bfb3b
+  - enabled: 1
+    path: Assets/Scenes/Joshua'sIntroScene.unity
+    guid: c3afced2a14b543dea9d512d35427000
+  - enabled: 1
+    path: Assets/Scenes/Joshua'sOpenWorldScene.unity
+    guid: 1a48491045ec544949eb5e1c6b89cf38
   - enabled: 1
     path: Assets/Scenes/Gabriel's_scene.unity
     guid: afef63ce2f2790ce7826514b15bff30f
