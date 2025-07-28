@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
+    //Save stuff
+
     [SerializeField] private string id;
     [ContextMenu("Generate Guid for ID")]
     private void GenerateGuid()
     {
         id = System.Guid.NewGuid().ToString();
     }
+    public bool defeated = false;
+
     [Header("REMOVE")]
     public bool timeForBoss = false;
 
@@ -40,7 +44,6 @@ public class EnemyCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -49,7 +52,23 @@ public class EnemyCollision : MonoBehaviour
         if (timeForBoss)
             BattleQued();
     }
+    public void LoadData(GameData data)
+    {
+        data.EnemiesDefeated.TryGetValue(id, out defeated);
+        if (defeated)
+        {
+            this.transform.parent.gameObject.SetActive(false);
+        }
 
+    }
+    public void SaveData(ref GameData data)
+    {
+        if (data.EnemiesDefeated.ContainsKey(id))
+        {
+            data.EnemiesDefeated.Remove(id);
+        }
+        data.EnemiesDefeated.Add(id, defeated);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         cc = collision.GetComponent<PlayerMovement>();
@@ -69,10 +88,9 @@ public class EnemyCollision : MonoBehaviour
             battleScript.OnDeath = OnDeath;
 
             battleScript.EnemySprite.sprite = sprite;
-            battleScript.EnemyId = id; 
             collision.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         }
-        
+
     }
 
     IEnumerator BattleQued()

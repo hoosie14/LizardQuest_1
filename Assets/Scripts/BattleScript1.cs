@@ -7,9 +7,7 @@ using TMPro.Examples;
 
 public class BattleScript1 : MonoBehaviour
 {
-    //Save stuff
-    public string EnemyId;
-    //This Gameobject. 
+    //This Gameobject.
     public GameObject BattleWindow;
     public GameObject VictoryScreen;
     public TMP_Text ScoreText;
@@ -126,7 +124,6 @@ public class BattleScript1 : MonoBehaviour
 
         Message = (OnAppearance);
     }
-
     private void Update()
     {
         enemyAnimator.SetBool("Damaged", pngDamage);
@@ -153,7 +150,7 @@ public class BattleScript1 : MonoBehaviour
             StartCoroutine(Won());
         }
 
-        Score = (2000 - (Turns * 250)) + ((PlayerHP/MaxPlayerHP) * 2000) + 23;
+        Score = (2000 - (Turns * 250)) + ((PlayerHP / MaxPlayerHP) * 2000) + 23;
         ScoreText.SetText(Score.ToString());
     }
 
@@ -256,7 +253,7 @@ public class BattleScript1 : MonoBehaviour
         AttackButtons.active = false;
         MainButtons.active = false;
 
-        sliderFill.active = false; 
+        sliderFill.active = false;
 
         Message = (OnDeath);
 
