@@ -444,7 +444,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58754705}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1387016429}
+        m_TargetAssemblyTypeName: BattleScript1, Assembly-CSharp
+        m_MethodName: Retreat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &58754705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,6 +1846,11 @@ MonoBehaviour:
   enablePlayerControls: 1
   moveSpeed: 5
   playerAnimator: {fileID: 753844806}
+  Score: 0
+  Level: 0
+  LevelDisplayer: {fileID: 0}
+  XPDisplayer: {fileID: 0}
+  battleScript: {fileID: 0}
 --- !u!61 &237120442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3084,7 +3101,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0016617775, y: 0.0016618967}
+  m_Offset: {x: -0.0043966174, y: 0.009866595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3095,7 +3112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.94349766, y: 0.9501455}
+  m_Size: {x: 1.0693022, y: 1.0978291}
   m_EdgeRadius: 0
 --- !u!61 &529229660
 BoxCollider2D:
@@ -3156,14 +3173,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   timeForBoss: 0
-  sprite: {fileID: 21300000, guid: 77db0ed2ffa654b87961beebcedd3ca9, type: 3}
+  sprite: {fileID: 21300000, guid: 52bb6ee39e99b4c239e3471e00f99960, type: 3}
   battleScript: {fileID: 1387016429}
   cc: {fileID: 0}
   Fader: {fileID: 978132996}
   BattleWindow: {fileID: 1387016427}
   enemyHP: 20
   maxEnemyHP: 20
-  enemyDamage: 5
+  enemyDamage: 3
   OnAppearance: A Basic Lizard Attacks!
   OnAttack: The Lizard doesn't hold back!
   OnDeath: 'Not bad kid... not bad... '
@@ -6848,7 +6865,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 694911111}
-  - component: {fileID: 694911110}
+  - component: {fileID: 694911112}
+  - component: {fileID: 694911113}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -6856,27 +6874,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &694911110
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694911109}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.96226263, y: 1.0150948, z: 1}
-  m_Center: {x: 0.0037739277, y: 0.13585544, z: 0}
 --- !u!4 &694911111
 Transform:
   m_ObjectHideFlags: 0
@@ -6892,6 +6889,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &694911112
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694911109}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.3875407}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.49078727}
+  m_EdgeRadius: 0
+--- !u!114 &694911113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694911109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f86c500a14ea61faa4ab396845b6fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BattleWindow: {fileID: 0}
+  battleScript: {fileID: 0}
+  enemySprite: {fileID: 0}
+  isEnemy: 0
+  isBoss: 0
+  _IsInteractable: 1
+  _dialougeBox: {fileID: 1965788478300462882, guid: 71005962c2d5b48c39470bac56d1bd8a, type: 3}
+  _DialougeIndex: 0
+  _dialougeBox_Instantiated: {fileID: 0}
+  _dialougeBox_Parent: {fileID: 2075399458}
+  _Text: {fileID: 0}
+  player: {fileID: 237120438}
+  playerMovement: {fileID: 0}
+  _CurrentDialougeList: []
+  _DialougeList:
+  - <YOU GOT A COOKIE!>
+  - <IT HAS BEEN ADDED TO YOUR BACKPACK>
+  _SecondaryDialougeList: []
+  _Current_Index: 0
+  enemyHP: 20
+  maxEnemyHP: 20
+  enemyDamage: 5
+  OnAppearance: 
+  OnAttack: 
+  OnDeath: 
+  audioSource: {fileID: 0}
+  OverworldMusic: {fileID: 0}
+  BattleMusic: {fileID: 0}
 --- !u!1 &710323495
 GameObject:
   m_ObjectHideFlags: 0
@@ -7233,7 +7315,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1984923393
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 212540960, guid: 4606103e1be774ae098cb12e24f05678, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8124,7 +8206,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BattleWindow: {fileID: 0}
+  battleScript: {fileID: 0}
+  enemySprite: {fileID: 0}
   isEnemy: 0
+  isBoss: 0
   _IsInteractable: 1
   _dialougeBox: {fileID: 1965788478300462882, guid: 71005962c2d5b48c39470bac56d1bd8a, type: 3}
   _DialougeIndex: 0
@@ -8133,6 +8218,7 @@ MonoBehaviour:
   _Text: {fileID: 0}
   player: {fileID: 237120438}
   playerMovement: {fileID: 0}
+  _CurrentDialougeList: []
   _DialougeList:
   - 'Hey, dude. '
   - 'Woah! Nice lizard! '
@@ -8143,7 +8229,17 @@ MonoBehaviour:
   - Whaaaa?? You think your lizard is better!? You try saying that to Jeramiah and
     see what happens! His lizard beats yours on every "Scale!"
   - (Oh Johnathan, you're on a roll today!)
+  _SecondaryDialougeList: []
   _Current_Index: 0
+  enemyHP: 20
+  maxEnemyHP: 20
+  enemyDamage: 5
+  OnAppearance: 
+  OnAttack: 
+  OnDeath: 
+  audioSource: {fileID: 0}
+  OverworldMusic: {fileID: 0}
+  BattleMusic: {fileID: 0}
 --- !u!1 &978132996
 GameObject:
   m_ObjectHideFlags: 0
@@ -9109,7 +9205,7 @@ RectTransform:
   m_GameObject: {fileID: 1122481984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0354, y: 1.0354, z: 1.0354}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1387016428}
@@ -10234,7 +10330,7 @@ MonoBehaviour:
   EnemyDamage: 7
   _cookies: 3
   audioSource: {fileID: 459201695}
-  OverworldMusic: {fileID: 8300000, guid: 38e98486da0b34117846437a3e852ad0, type: 3}
+  OverworldMusic: {fileID: 8300000, guid: d28296dc2b7764bd298b1487bc39b7f1, type: 3}
   BattleMusic: {fileID: 8300000, guid: 7e43f1a72ddc9418da9de6b11df6ad25, type: 3}
   HP: {fileID: 1720980678}
   ConsoleText: {fileID: 1193869221}
@@ -10482,7 +10578,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1984923393
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -11527,14 +11623,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   timeForBoss: 0
-  sprite: {fileID: 21300000, guid: 77db0ed2ffa654b87961beebcedd3ca9, type: 3}
+  sprite: {fileID: 21300000, guid: 52bb6ee39e99b4c239e3471e00f99960, type: 3}
   battleScript: {fileID: 1387016429}
   cc: {fileID: 0}
   Fader: {fileID: 978132996}
   BattleWindow: {fileID: 1387016427}
   enemyHP: 20
   maxEnemyHP: 20
-  enemyDamage: 5
+  enemyDamage: 3
   OnAppearance: A Basic Lizard Attacks!
   OnAttack: The Lizard doesn't hold back!
   OnDeath: 'Not bad kid... not bad... '
@@ -11618,7 +11714,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0016617775, y: 0.0016618967}
+  m_Offset: {x: 0.014512241, y: 0.0038154125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11629,7 +11725,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.94349766, y: 0.9501455}
+  m_Size: {x: 1.113674, y: 1.0664382}
   m_EdgeRadius: 0
 --- !u!1 &1538401060
 GameObject:
@@ -12638,7 +12734,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BattleWindow: {fileID: 1387016427}
+  battleScript: {fileID: 1387016429}
+  enemySprite: {fileID: 21300000, guid: ec68001bf2da5fd42834facd87c8b2e9, type: 3}
   isEnemy: 1
+  isBoss: 0
   _IsInteractable: 1
   _dialougeBox: {fileID: 1965788478300462882, guid: 71005962c2d5b48c39470bac56d1bd8a, type: 3}
   _DialougeIndex: 0
@@ -12647,6 +12746,7 @@ MonoBehaviour:
   _Text: {fileID: 0}
   player: {fileID: 237120438}
   playerMovement: {fileID: 0}
+  _CurrentDialougeList: []
   _DialougeList:
   - I heard what you said about my lizard.
   - how did I hear so fast, you ask?...
@@ -12654,7 +12754,17 @@ MonoBehaviour:
   - No need to feel bad for me, kiddo. I got along just fine.
   - 'Ya see, I''m a firm believer in "tough love." So... '
   - LET'S JUST HOPE I'M NOT TOO TOUGH FOR YA, BUCKO! HAHAHAHA!
+  _SecondaryDialougeList: []
   _Current_Index: 0
+  enemyHP: 20
+  maxEnemyHP: 20
+  enemyDamage: 5
+  OnAppearance: A big lizard attacks!
+  OnAttack: He's a fiesty one!
+  OnDeath: farewell, cruel world...
+  audioSource: {fileID: 459201695}
+  OverworldMusic: {fileID: 8300000, guid: d28296dc2b7764bd298b1487bc39b7f1, type: 3}
+  BattleMusic: {fileID: 8300000, guid: 0c43ff7fe82ff4c98967aeaf04a10014, type: 3}
 --- !u!114 &1659184818
 MonoBehaviour:
   m_ObjectHideFlags: 0

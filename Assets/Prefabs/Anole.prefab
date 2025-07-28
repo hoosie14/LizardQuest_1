@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 8969911587114859406}
   - component: {fileID: 5241363826892177469}
   m_Layer: 0
-  m_Name: Enemy (type1)
+  m_Name: Anole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   enemyHP: 20
   maxEnemyHP: 20
   enemyDamage: 5
-  OnAppearance: A Basic Lizard Attacks!
+  OnAppearance: An Anole Attacks!
   OnAttack: The Lizard doesn't hold back!
   OnDeath: 'Not bad kid... not bad... '
   audioSource: {fileID: 0}

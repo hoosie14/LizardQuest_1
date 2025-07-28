@@ -102,6 +102,8 @@ public class BattleScript1 : MonoBehaviour
 
     private void OnEnable()
     {
+        
+
         Win = false;
         sliderFill.active = true;
 
@@ -129,6 +131,7 @@ public class BattleScript1 : MonoBehaviour
 
     private void Update()
     {
+
         enemyAnimator.SetBool("Damaged", pngDamage);
         enemyAnimator.SetBool("Attack", pngAttack);
         enemyAnimator.SetBool("Win", Win);
@@ -149,8 +152,11 @@ public class BattleScript1 : MonoBehaviour
         }
         else if (EnemyHP <= 0)
         {
-            Win = true;
-            StartCoroutine(Won());
+            if (Win == false)
+            {
+                StartCoroutine(Won());
+                Win = true;
+            }
         }
 
         Score = (2000 - (Turns * 250)) + ((PlayerHP/MaxPlayerHP) * 2000) + 23;
@@ -168,7 +174,7 @@ public class BattleScript1 : MonoBehaviour
         }
         else
         {
-            Win = true;
+            //Win = true;
         }
         
         
@@ -202,6 +208,11 @@ public class BattleScript1 : MonoBehaviour
             StartCoroutine(ActionPause());
         }
         
+    }
+
+    public void Retreat()
+    {
+        StartCoroutine(CloseWindow());
     }
 
     public void EnemyTurn()
@@ -265,6 +276,8 @@ public class BattleScript1 : MonoBehaviour
         VictoryScreen.active = true;
 
         audioSource.clip = OverworldMusic;
+
+        player.Score += Score; 
         
     }
 
@@ -290,6 +303,7 @@ public class BattleScript1 : MonoBehaviour
         yield return new WaitForSeconds(1);
         
         player.enablePlayerControls = true;
+        audioSource.clip = OverworldMusic;
         audioSource.Play();
         Fader.active = false;
         BattleWindow.active = false;

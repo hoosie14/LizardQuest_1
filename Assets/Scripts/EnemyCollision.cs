@@ -58,6 +58,7 @@ public class EnemyCollision : MonoBehaviour
         {
             cc.enablePlayerControls = false;
 
+            battleScript.BattleMusic = BattleMusic;
             StartCoroutine(BattleQued());
 
             battleScript.EnemyHP = enemyHP;

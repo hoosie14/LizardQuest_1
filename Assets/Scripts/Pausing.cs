@@ -53,5 +53,10 @@ public class Pausing : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu"); 
-    }    
+    }
+
+    public void Reload()
+    {
+        SceneManager.LoadScene("Joshua'sOpenWorldScene");
+    }
 }
